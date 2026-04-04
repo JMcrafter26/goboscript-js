@@ -3,6 +3,7 @@ use std::{
     path::PathBuf,
 };
 
+#[derive(Debug)]
 pub enum FmtError {
     AnyhowError(anyhow::Error),
 }
