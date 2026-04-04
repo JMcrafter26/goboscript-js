@@ -130,6 +130,8 @@ Stmt: Stmt = {
     REPEAT <times:BoxedIfExpr> <body:Stmts> => Stmt::Repeat { times, body },
     <l:@L> FOREVER <r:@R> <body:Stmts> => Stmt::Forever { body, span: l..r },
     <l:@L> WHILE <r:@R> <cond:BoxedIfExpr> <body:Stmts> => {
+        // `while (cond)` compiles to `Stmt::Until { cond: !cond }` because
+        // Scratch's "repeat until" block is the primitive loop construct.
         Stmt::Until { cond: Box::new(UnOp::Not.to_expr(l..r, *cond)), body }
     },
     <type_:TypeAnnotation> <l:@L> <name:NAME> <r:@R> "=" <value:BoxedExpr> ";" => {

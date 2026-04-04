@@ -56,7 +56,7 @@ onflag() {
 function render() {
     erase_all;
     i = scroll;
-    repeat azf_font[2] + azf.dy div 340 {
+    repeat 340 div (azf_font[2] + azf.dy) {
         azf_draw_string(self[i], 0-230);
         azf.y += azf.sy * (azf_font[2] + azf.dy);
         i += 1;
