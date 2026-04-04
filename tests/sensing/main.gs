@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     ask "What is your name?";
     foo = answer();
     say touching_mouse_pointer();

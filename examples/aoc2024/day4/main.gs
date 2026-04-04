@@ -2,59 +2,59 @@ costumes "blank.svg";
 
 list input = file ```input.txt```;
 
-proc count_xmas {
+function count_xmas() {
     count_xmas = 0;
-    local i = 1;
+    let i = 1;
     repeat length(input) {
-        local j = 1;
+        let j = 1;
         repeat length(input[1]) {
             count_xmas += (
                     input[i][j    ] == "X"
-                and input[i][j + 1] == "M"
-                and input[i][j + 2] == "A"
-                and input[i][j + 3] == "S"
+                && input[i][j + 1] == "M"
+                && input[i][j + 2] == "A"
+                && input[i][j + 3] == "S"
             )
             + (
                     input[i][j    ] == "S"
-                and input[i][j + 1] == "A"
-                and input[i][j + 2] == "M"
-                and input[i][j + 3] == "X"
+                && input[i][j + 1] == "A"
+                && input[i][j + 2] == "M"
+                && input[i][j + 3] == "X"
             )
             + (
                     input[i    ][j] == "X"
-                and input[i + 1][j] == "M"
-                and input[i + 2][j] == "A"
-                and input[i + 3][j] == "S"
+                && input[i + 1][j] == "M"
+                && input[i + 2][j] == "A"
+                && input[i + 3][j] == "S"
             )
             + (
                     input[i    ][j] == "S"
-                and input[i + 1][j] == "A"
-                and input[i + 2][j] == "M"
-                and input[i + 3][j] == "X"
+                && input[i + 1][j] == "A"
+                && input[i + 2][j] == "M"
+                && input[i + 3][j] == "X"
             )
             + (
                     input[i    ][j    ] == "X"
-                and input[i + 1][j + 1] == "M"
-                and input[i + 2][j + 2] == "A"
-                and input[i + 3][j + 3] == "S"
+                && input[i + 1][j + 1] == "M"
+                && input[i + 2][j + 2] == "A"
+                && input[i + 3][j + 3] == "S"
             )
             + (
                     input[i    ][j    ] == "S"
-                and input[i + 1][j + 1] == "A"
-                and input[i + 2][j + 2] == "M"
-                and input[i + 3][j + 3] == "X"
+                && input[i + 1][j + 1] == "A"
+                && input[i + 2][j + 2] == "M"
+                && input[i + 3][j + 3] == "X"
             )
             + (
                     input[i    ][j + 3] == "X"
-                and input[i + 1][j + 2] == "M"
-                and input[i + 2][j + 1] == "A"
-                and input[i + 3][j    ] == "S"
+                && input[i + 1][j + 2] == "M"
+                && input[i + 2][j + 1] == "A"
+                && input[i + 3][j    ] == "S"
             )
             + (
                     input[i    ][j + 3] == "S"
-                and input[i + 1][j + 2] == "A"
-                and input[i + 2][j + 1] == "M"
-                and input[i + 3][j    ] == "X"
+                && input[i + 1][j + 2] == "A"
+                && input[i + 2][j + 1] == "M"
+                && input[i + 3][j    ] == "X"
             );
             j++;
         }
@@ -62,36 +62,36 @@ proc count_xmas {
     }
 }
 
-proc count_x_mas {
+function count_x_mas() {
     count_x_mas = 0;
-    local i = 1;
+    let i = 1;
     repeat length(input) {
-        local j = 1;
+        let j = 1;
         repeat length(input[1]) {
-            local a = input[i    ][j    ];
-            local b = input[i    ][j + 2];
-            local c = input[i + 2][j    ];
-            local d = input[i + 2][j + 2];
-            count_x_mas += input[i + 1][j + 1] == "A" and ((
+            let a = input[i    ][j    ];
+            let b = input[i    ][j + 2];
+            let c = input[i + 2][j    ];
+            let d = input[i + 2][j + 2];
+            count_x_mas += input[i + 1][j + 1] == "A" && ((
                     a == "M"
-                and b == "S"
-                and c == "M"
-                and d == "S"
-            ) or (
+                && b == "S"
+                && c == "M"
+                && d == "S"
+            ) || (
                     a == "S"
-                and b == "M"
-                and c == "S"
-                and d == "M"
-            ) or (
+                && b == "M"
+                && c == "S"
+                && d == "M"
+            ) || (
                     a == "M"
-                and b == "M"
-                and c == "S"
-                and d == "S"
-            ) or (
+                && b == "M"
+                && c == "S"
+                && d == "S"
+            ) || (
                     a == "S"
-                and b == "S"
-                and c == "M"
-                and d == "M"
+                && b == "S"
+                && c == "M"
+                && d == "M"
             ));
             j++;
         }
@@ -99,8 +99,8 @@ proc count_x_mas {
     }
 }
 
-onflag {
-    count_xmas;
-    count_x_mas;
+onflag() {
+    count_xmas();
+    count_x_mas();
     say "Count XMAS: " & count_xmas & "\nCount X-MAS: " & count_x_mas;
 }

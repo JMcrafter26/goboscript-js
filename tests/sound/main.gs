@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     play_sound_until_done "sound";
     play_sound_until_done volume();
     start_sound "sound";

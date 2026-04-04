@@ -7,7 +7,7 @@ enum Direction {
     West
 }
 
-onflag {
+onflag() {
     say Direction.North;
     say Direction.East;
     say Direction.South;

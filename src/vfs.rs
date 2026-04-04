@@ -98,6 +98,26 @@ pub struct MemFS {
     files: FxHashMap<String, Data>,
 }
 
+impl MemFS {
+    /// Create an empty in-memory filesystem.
+    pub fn new() -> Self {
+        Self {
+            files: FxHashMap::default(),
+        }
+    }
+
+    /// Insert a file with the given path and content.
+    pub fn insert_file(&mut self, path: impl Into<String>, content: impl Into<Vec<u8>>) {
+        self.files.insert(path.into(), Data { inner: content.into() });
+    }
+}
+
+impl Default for MemFS {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl VFS for MemFS {
     fn read_dir(&mut self, path: &Path) -> io::Result<Vec<PathBuf>> {
         let path_str = path

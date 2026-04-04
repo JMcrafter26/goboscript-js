@@ -1,13 +1,13 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     lhs = 1;
     rhs = 2;
     say lhs + rhs;
     say lhs - rhs;
     say lhs * rhs;
     say lhs / rhs;
-    say lhs // rhs;
+    say lhs div rhs;
     say random(lhs, rhs);
     say lhs > rhs;
     say lhs >= rhs;
@@ -15,9 +15,9 @@ onflag {
     say lhs <= rhs;
     say lhs == rhs;
     say lhs != rhs;
-    say key_pressed("up arrow") and key_pressed("down arrow");
-    say key_pressed("up arrow") or key_pressed("down arrow");
-    say not key_pressed("up arrow");
+    say key_pressed("up arrow") && key_pressed("down arrow");
+    say key_pressed("up arrow") || key_pressed("down arrow");
+    say !key_pressed("up arrow");
     say lhs & rhs;
     say lhs[rhs];
     say length rhs;

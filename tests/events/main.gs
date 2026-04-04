@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     foo = 1;
     broadcast "message";
     broadcast_and_wait "message";

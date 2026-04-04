@@ -203,8 +203,11 @@ fn visit_stmt(stmt: &mut Stmt, v: &mut V) {
                     } else {
                         locals.insert(basename.clone(), var);
                     }
+                    return;
                 }
-                return;
+                // No proc/func locals context (e.g. inside an event handler).
+                // Fall through and register as a sprite-level variable so that
+                // `let x = …` in an event body still works like `x = …`.
             }
             if v.locals
                 .as_ref()
