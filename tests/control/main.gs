@@ -1,18 +1,16 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     foo = 1;
     wait 1;
     repeat foo {
-        until 1 < 2 {}
+        while (!(1 < 2)) {}
     }
-    if 1 < 2 {
+    if (1 < 2) {
         clone foo;
-    }
-    elif 1 >= 2 {
+    } else if (1 >= 2) {
         stop_this_script;
-    }
-    else {
+    } else {
         clone "friend";
     }
     forever {

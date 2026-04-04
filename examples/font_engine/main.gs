@@ -23,24 +23,24 @@ struct azf {
     cmd
 }
 
-onflag {
-    azf azf = azf {
-        sx = 1,        # scale-x
-        sy = 0-1,      # scale-y (should be negative)
-        dx = 2,        # distance between characters
-        dy = 3,        # distance between lines
-        x = 0-230,     # x-position to draw at (will be mutated)
-        y = 170,       # y-position to draw at (will be mutated)
-        x2 = 230,      # x-position to clip text at
-        start_x = 0,   # --.
-        start_y = 0,   #   |- (internal state)
-        ptr = 0,       #   |
-        cmd = 0        # --`
+onflag() {
+    let azf: azf = azf {
+        sx = 1,        // scale-x
+        sy = 0-1,      // scale-y (should be negative)
+        dx = 2,        // distance between characters
+        dy = 3,        // distance between lines
+        x = 0-230,     // x-position to draw at (will be mutated)
+        y = 170,       // y-position to draw at (will be mutated)
+        x2 = 230,      // x-position to clip text at
+        start_x = 0,   // -.
+        start_y = 0,   //  |- (internal state)
+        ptr = 0,       //  |
+        cmd = 0        // -`
     };
     forever {
         azf.x = 0-230;
         azf.y = 170;
-        render;
+        render();
         if key_pressed("up arrow") {
             scroll += 1;
         }
@@ -53,11 +53,11 @@ onflag {
     }
 }
 
-proc render {
+function render() {
     erase_all;
     i = scroll;
-    repeat 340 // (azf_font[2] + azf.dy)  {
-        azf_draw_string self[i], 0-230;
+    repeat azf_font[2] + azf.dy div 340 {
+        azf_draw_string(self[i], 0-230);
         azf.y += azf.sy * (azf_font[2] + azf.dy);
         i += 1;
         if i > length(self) {
@@ -66,11 +66,11 @@ proc render {
     }
 }
 
-proc azf_draw_string string, x {
+function azf_draw_string(string, x) {
     azf.x = $x;
-    local i = 1;
+    let i = 1;
     repeat length($string) {
-        azf_draw_char $string[i];
+        azf_draw_char($string[i]);
         azf.x += azf.sx * (azf_font[1] + azf.dx);
         if azf.x >= azf.x2 {
             azf.x = $x;
@@ -80,58 +80,53 @@ proc azf_draw_string string, x {
     }
 }
 
-proc azf_draw_char char {
+function azf_draw_char(char) {
     switch_costume "_" & $char;
     azf.ptr = azf_font[2 + costume_number()];
-    until azf.ptr == 0 {
-        azf_step;
+    while (!(azf.ptr == 0)) {
+        azf_step();
     }
 }
 
-proc azf_step {
-    if azf_font[azf.ptr] == "M" 
-    or azf_font[azf.ptr] == "L"
-    or azf_font[azf.ptr] == "H"
-    or azf_font[azf.ptr] == "V"
-    or azf_font[azf.ptr] == "Z"
-    or azf_font[azf.ptr] == "#" {
+function azf_step() {
+    if (azf_font[azf.ptr] == "M"
+    || azf_font[azf.ptr] == "L"
+    || azf_font[azf.ptr] == "H"
+    || azf_font[azf.ptr] == "V"
+    || azf_font[azf.ptr] == "Z"
+    || azf_font[azf.ptr] == "#") {
         azf.cmd = azf_font[azf.ptr];
         azf.ptr += 1;
     }
-    if azf.cmd == "M" {
+    if (azf.cmd == "M") {
         goto
             azf.x + azf.sx * azf_font[azf.ptr],
             azf.y + azf.sy * azf_font[azf.ptr + 1];
         azf.start_x = x_position();
         azf.start_y = y_position();
         azf.ptr += 2;
-    }
-    elif azf.cmd == "L" {
+    } else if (azf.cmd == "L") {
         pen_down;
         goto
             azf.x + azf.sx * azf_font[azf.ptr],
             azf.y + azf.sy * azf_font[azf.ptr + 1];
         pen_up;
         azf.ptr += 2;
-    }
-    elif azf.cmd == "H" {
+    } else if (azf.cmd == "H") {
         pen_down;
         set_x azf.x + azf.sx * azf_font[azf.ptr];
         pen_up;
         azf.ptr += 1;
-    }
-    elif azf.cmd == "V" {
+    } else if (azf.cmd == "V") {
         pen_down;
         set_y azf.y + azf.sy * azf_font[azf.ptr];
         pen_up;
         azf.ptr += 1;
-    }
-    elif azf.cmd == "Z" {
+    } else if (azf.cmd == "Z") {
         pen_down;
         goto azf.start_x, azf.start_y;
         pen_up;
-    }
-    elif azf.cmd == "#" {
+    } else if (azf.cmd == "#") {
         azf.ptr = 0;
     }
 }

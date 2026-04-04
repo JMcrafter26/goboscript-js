@@ -361,7 +361,6 @@ impl DiagnosticKind {
                 None
             }
             DiagnosticKind::UnrecognizedToken(token, ..) => match token {
-                Token::FloorDiv => Some("Use # for comments".to_owned()),
                 Token::Var => Some("var should only be used at top-level.".to_owned()),
                 _ => None,
             },

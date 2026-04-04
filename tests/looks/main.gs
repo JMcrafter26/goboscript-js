@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     say "with duration", 2;
     say "without duration";
     think "with duration", 2;

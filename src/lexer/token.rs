@@ -14,7 +14,8 @@ use crate::misc::SmolStr;
 
 #[derive(Debug, Logos, Clone, PartialEq, Serialize, Deserialize)]
 #[logos(skip r"[ \r\t\f]+")]
-#[logos(skip r"#[^\n]*\n")]
+#[logos(skip r"//[^\n]*")]
+#[logos(skip r"/\*([^*]|\*[^/])*\*/")]
 pub enum Token {
     #[token("%define")]
     Define,
@@ -44,12 +45,10 @@ pub enum Token {
     Costumes,
     #[token("sounds")]
     Sounds,
-    #[token("local")]
-    Local,
-    #[token("proc")]
-    Proc,
-    #[token("func")]
-    Func,
+    #[token("let")]
+    Let,
+    #[token("function")]
+    Function,
     #[token("return")]
     Return,
     #[token("nowarp")]
@@ -74,10 +73,8 @@ pub enum Token {
     If,
     #[token("else")]
     Else,
-    #[token("elif")]
-    Elif,
-    #[token("until")]
-    Until,
+    #[token("while")]
+    While,
     #[token("forever")]
     Forever,
     #[token("repeat")]
@@ -108,7 +105,7 @@ pub enum Token {
     AssignMultiply,
     #[token("/=")]
     AssignDivide,
-    #[token("//=")]
+    #[token("div=")]
     AssignFloorDiv,
     #[token("%=")]
     AssignModulo,
@@ -130,12 +127,12 @@ pub enum Token {
     Le,
     #[token(">=")]
     Ge,
-    #[token("not")]
-    Not,
-    #[token("and")]
-    And,
-    #[token("or")]
-    Or,
+    #[token("!")]
+    Bang,
+    #[token("&&")]
+    AmpAmp,
+    #[token("||")]
+    PipePipe,
     #[token("in")]
     In,
     #[token("&")]
@@ -148,8 +145,8 @@ pub enum Token {
     Star,
     #[token("/")]
     Slash,
-    #[token("//")]
-    FloorDiv,
+    #[token("div")]
+    Div,
     #[token("%")]
     Percent,
     #[token(";")]
@@ -255,9 +252,8 @@ impl Display for Token {
             Token::Str(value) => write!(f, "str{}", value),
             Token::Costumes => write!(f, "costumes"),
             Token::Sounds => write!(f, "sounds"),
-            Token::Local => write!(f, "local"),
-            Token::Proc => write!(f, "proc"),
-            Token::Func => write!(f, "func"),
+            Token::Let => write!(f, "let"),
+            Token::Function => write!(f, "function"),
             Token::Return => write!(f, "return"),
             Token::NoWarp => write!(f, "nowarp"),
             Token::On => write!(f, "on"),
@@ -270,8 +266,7 @@ impl Display for Token {
             Token::OnClone => write!(f, "onclone"),
             Token::If => write!(f, "if"),
             Token::Else => write!(f, "else"),
-            Token::Elif => write!(f, "elif"),
-            Token::Until => write!(f, "until"),
+            Token::While => write!(f, "while"),
             Token::Forever => write!(f, "forever"),
             Token::Repeat => write!(f, "repeat"),
             Token::Comma => write!(f, ","),
@@ -287,7 +282,7 @@ impl Display for Token {
             Token::AssignSubtract => write!(f, "-="),
             Token::AssignMultiply => write!(f, "*="),
             Token::AssignDivide => write!(f, "/="),
-            Token::AssignFloorDiv => write!(f, "//="),
+            Token::AssignFloorDiv => write!(f, "div="),
             Token::AssignModulo => write!(f, "%="),
             Token::AssignJoin => write!(f, "&="),
             Token::LBracket => write!(f, "["),
@@ -298,16 +293,16 @@ impl Display for Token {
             Token::Gt => write!(f, ">"),
             Token::Le => write!(f, "<="),
             Token::Ge => write!(f, ">="),
-            Token::Not => write!(f, "not"),
-            Token::And => write!(f, "and"),
-            Token::Or => write!(f, "or"),
+            Token::Bang => write!(f, "!"),
+            Token::AmpAmp => write!(f, "&&"),
+            Token::PipePipe => write!(f, "||"),
             Token::In => write!(f, "in"),
             Token::Amp => write!(f, "&"),
             Token::Plus => write!(f, "+"),
             Token::Minus => write!(f, "-"),
             Token::Star => write!(f, "*"),
             Token::Slash => write!(f, "/"),
-            Token::FloorDiv => write!(f, "//"),
+            Token::Div => write!(f, "div"),
             Token::Percent => write!(f, "%"),
             Token::Semicolon => write!(f, ";"),
             Token::Colon => write!(f, ":"),

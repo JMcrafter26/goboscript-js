@@ -2,11 +2,11 @@ costumes "blank.svg";
 
 list input = file ```input.txt```;
 
-proc strsetchar string, index, char {
+function strsetchar(string, index, char) {
     strsetchar = "";
-    local i = 1;
+    let i = 1;
     repeat length($string) {
-        if i == $index {
+        if (i == $index) {
             strsetchar &= $char;
         } else {
             strsetchar &= $string[i];
@@ -15,43 +15,43 @@ proc strsetchar string, index, char {
     }
 }
 
-proc strfindchar string, char {
+function strfindchar(string, char) {
     strfindchar = 0;
-    local i = 1;
+    let i = 1;
     repeat length($string) {
-        if $string[i] == $char {
+        if ($string[i] == $char) {
             strfindchar = i;
         }
         i++;
     }
 }
 
-proc step {
-    local nx = x + cos(dir);
-    local ny = y + sin(dir);
-    if input[ny][nx] == "#" {
+function step() {
+    let nx = x + cos(dir);
+    let ny = y + sin(dir);
+    if (input[ny][nx] == "#") {
         dir += 90;
     } else {
         x = nx;
         y = ny;
-        strsetchar input[ny], nx, char: "X";
+        strsetchar(input[ny], nx, char: "X");
         input[ny] = strsetchar;
     }
 }
 
-proc run {
-    until x < 0 or y < 0 or x > length(input[1]) or y > length(input) {
-        step;
+function run() {
+    while (!(x < 0 || y < 0 || x > length(input[1]) || y > length(input))) {
+        step();
     }
 }
 
-proc count_x {
+function count_x() {
     count_x = 1;
-    local i = 1;
+    let i = 1;
     repeat length(input) {
-        local j = 1;
+        let j = 1;
         repeat length(input[1]) {
-            if input[i][j] == "X" {
+            if (input[i][j] == "X") {
                 count_x++;
             }
             j++;
@@ -60,12 +60,12 @@ proc count_x {
     }
 }
 
-proc find_guard {
-    local i = 1;
+function find_guard() {
+    let i = 1;
     repeat length(input) {
-        local j = 1;
+        let j = 1;
         repeat length(input[1]) {
-            if input[i][j] == "^" {
+            if (input[i][j] == "^") {
                 x = j;
                 y = i;
             }
@@ -75,10 +75,10 @@ proc find_guard {
     }
 }
 
-onflag {
-    find_guard;
+onflag() {
+    find_guard();
     dir = 0;
-    run;
-    count_x;
+    run();
+    count_x();
     say "Count X: " & count_x;
 }

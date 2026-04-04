@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     say true;
     say false;
     say 0xFF;

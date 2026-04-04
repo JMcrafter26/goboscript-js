@@ -1,6 +1,6 @@
 costumes "blank.svg";
 
-onflag {
+onflag() {
     move 10;
     turn_left 45;
     turn_right 45;

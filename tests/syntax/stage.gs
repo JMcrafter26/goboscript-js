@@ -2,6 +2,6 @@ costumes "blank.svg";
 
 var global_var = 0;
 
-onflag {
+onflag() {
     global_var = 0;
 }
