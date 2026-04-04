@@ -52,7 +52,7 @@ onflag() {
 
 ### While Loop
 
-goboscript has a `while` loop that compiles to a Scratch "repeat until" block with the condition negated:
+Goboscript has a `while` loop that compiles to a Scratch "repeat until" block with the condition negated:
 
 ```goboscript
 onflag() {

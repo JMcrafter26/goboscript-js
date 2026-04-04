@@ -974,6 +974,36 @@ onflag() {
         ));
     }
 
+    #[test]
+    fn test_parenthesized_proc_call_no_args() {
+        // `name();` should be accepted as a proc-call statement.
+        assert_compiles(&sprite(
+            r#"costumes "blank.svg";
+function do_thing() {
+    say "hello";
+}
+onflag() {
+    do_thing();
+}
+"#,
+        ));
+    }
+
+    #[test]
+    fn test_parenthesized_proc_call_multiple_args() {
+        // `name(a, b);` should be accepted as a proc-call statement.
+        assert_compiles(&sprite(
+            r#"costumes "blank.svg";
+function add_and_say(a, b) {
+    say $a + $b;
+}
+onflag() {
+    add_and_say(1, 2);
+}
+"#,
+        ));
+    }
+
     // ─── fmt (formatter) smoke test ───────────────────────────────────────────────
 
     #[test]
