@@ -904,6 +904,7 @@ onflag() {
     }
 
 
+    #[test]
     fn test_old_and_keyword_fails() {
         // `and` is no longer a keyword; the expression should be an error.
         assert_fails(&sprite(
