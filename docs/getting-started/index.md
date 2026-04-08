@@ -59,6 +59,14 @@ goboscript b
 This will compile the project into a `.sb3` file. The `.sb3` file will be placed in the
 project directory. It will have the same name as the project directory.
 
+If you want to garble the generated variable and function names (to protect your code structure when distributed), you can compile with the `--obfuscate` flag:
+
+```bash
+goboscript build --obfuscate
+```
+
+You can optionally pass `--debug` alongside `--obfuscate` to preserve the names of the `log`, `warn`, `error` and `breakpoint` functions, making it easier to debug a garbled build. Also, if there are specific variables or functions you do not want garbled, simply prefix their names with `!_` (this prefix will be stripped in the final output, leaving your original name intact).
+
 If the compilation fails, and you have got errors, the generated `.sb3` file will be
 invalid and should not be opened in Scratch.
 

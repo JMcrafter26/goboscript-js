@@ -36,12 +36,15 @@ pub enum Command {
         #[arg()]
         /// Project directory, if not given, the current directory is used.
         input: Option<PathBuf>,
-        #[arg(short, long)]
+        #[arg(long)]
         /// Output file, if not given, it will be the project directory's name + `.sb3`
         output: Option<PathBuf>,
         #[arg(long)]
         /// Produce an obfuscated/garbled output.
         obfuscate: bool,
+        #[arg(long)]
+        /// Debug mode.
+        debug: bool,
     },
 
     /// Create a new goboscript project with a blank backdrop, a main sprite with a

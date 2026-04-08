@@ -13,6 +13,8 @@ use std::{
     rc::Rc,
 };
 
+pub static DEBUG: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+
 use anyhow::bail;
 use fxhash::{
     FxHashMap,
@@ -369,11 +371,18 @@ where T: Write + Seek
         if !self.obfuscate {
             return name.to_string();
         }
+        if let Some(rest) = name.strip_prefix("!_") {
+            return rest.to_string();
+        }
+        if DEBUG.load(std::sync::atomic::Ordering::Relaxed) && ["log", "warn", "error", "breakpoint"].contains(&name) {
+            return name.to_string();
+        }
         if let Some(n) = self.garbled_vars.get(name) {
             return n.clone();
         }
         self.garbler_count += 1;
-        let new_name = format!("_{}", self.garbler_count);
+        let pseudo_random = (self.garbler_count as u64).wrapping_mul(0x9e3779b97f4a7c15);
+        let new_name = format!("_{:08x}", pseudo_random as u32);
         self.garbled_vars.insert(name.to_string(), new_name.clone());
         new_name
     }
@@ -398,11 +407,12 @@ where T: Write + Seek
     }
 
     pub fn single_field_id(&mut self, name: &'static str, value: &str) -> io::Result<()> {
+        let garbled_value = self.garble(value);
         write!(
             self,
             r#","fields":{{"{name}":[{},{}]}}"#,
-            json!(value),
-            json!(value)
+            json!(garbled_value),
+            json!(garbled_value)
         )
     }
 

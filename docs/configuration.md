@@ -93,3 +93,17 @@ high_quality_pen = true # default is false
 stage_width = 640 # default is 480
 stage_height = 480 # default is 360
 ```
+
+## Obfuscation
+
+You can enable code obfuscation (garbling of variable and function identifiers) directly in the configuration file. This affects `.sb3` compile output.
+
+```toml
+obfuscate = true # default is false
+```
+
+You can also enable a debug mode to preserve basic logging functions (like `log`, `warn`, `error` and `breakpoint`) when obfuscating.
+
+```toml
+debug = true # default is false
+```

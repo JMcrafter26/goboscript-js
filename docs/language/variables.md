@@ -77,3 +77,7 @@ show variable_name;
 ```goboscript
 hide variable_name;
 ```
+
+## Obfuscation Prefix
+
+If you compile your project with the `--obfuscate` flag, variable names will be garbled by default into a random-looking hex string. If you want a specific variable to remain ungarbled in the final output, you can prefix its name with `!_` (e.g. `!_myVariable`). The prefix will be automatically stripped in the `.sb3` output, keeping your name intact.

@@ -23,7 +23,7 @@ use crate::{
 
 pub fn frontend() -> ExitCode {
     match Cli::parse().command {
-        Command::Build { input, output, obfuscate } => match build::build(input, output, obfuscate) {
+        Command::Build { input, output, obfuscate, debug } => match build::build(input, output, obfuscate, debug) {
             Ok(artifact) => {
                 artifact.eprint();
                 eprintln!();
@@ -84,6 +84,7 @@ pub fn frontend() -> ExitCode {
                     stage_width,
                     stage_height,
                     obfuscate: None,
+                    debug: None,
                 },
             ) {
                 Err(NewError::AnyhowError(err)) => {

@@ -79,7 +79,8 @@ where T: Write + Seek
             None => basename.clone(),
         };
 
-        self.arg_impl(this_id, parent_id, &qualified_name, false)
+        let garbled_name = self.garble(&qualified_name);
+        self.arg_impl(this_id, parent_id, &garbled_name, false)
     }
 
     fn arg_impl(
@@ -500,10 +501,12 @@ where T: Write + Seek
                         let qualified_list_name = QualifiedName::List(qualified_name, Type::Value);
                         match qualified_list_name {
                             QualifiedName::Var(qname, _) => {
-                                write!(self, "[3,[12,{},{}],", json!(*qname), json!(*qname))?;
+                                let garbled_name = self.garble(&qname);
+                                write!(self, "[3,[12,{},{}],", json!(garbled_name), json!(garbled_name))?;
                             }
                             QualifiedName::List(qname, _) => {
-                                write!(self, "[3,[13,{},{}],", json!(*qname), json!(*qname))?;
+                                let garbled_name = self.garble(&qname);
+                                write!(self, "[3,[13,{},{}],", json!(garbled_name), json!(garbled_name))?;
                             }
                         }
                         return write!(self, "[10, \"\"]]");

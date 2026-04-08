@@ -33,4 +33,6 @@ pub struct Config {
     pub stage_height: Option<u64>,
     #[serde(default)]
     pub obfuscate: Option<bool>,
+    #[serde(default)]
+    pub debug: Option<bool>,
 }
