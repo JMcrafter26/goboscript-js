@@ -371,7 +371,7 @@ where T: Write + Seek
         if !self.obfuscate {
             return name.to_string();
         }
-        if let Some(rest) = name.strip_prefix("!_") {
+        if let Some(rest) = name.strip_prefix("__") {
             return rest.to_string();
         }
         if DEBUG.load(std::sync::atomic::Ordering::Relaxed) && ["log", "warn", "error", "breakpoint"].contains(&name) {
