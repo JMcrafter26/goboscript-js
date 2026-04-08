@@ -10,7 +10,7 @@ patterns:
     end: "$"
   - name: string.quoted.double
     match: "\"([^\"\\\\]|\\\\([\"\\\\bnfrt]|u[a-fA-F0-9]{4}))*\""
-  - begin: "\\b(proc|func)[\\s\\n]+([a-zA-Z_][_a-zA-Z0-9]*)"
+  - begin: "\\b(proc|func|function)[\\s\\n]+([a-zA-Z_][_a-zA-Z0-9]*)"
     end: "\\{"
     beginCaptures:
       1:
@@ -23,9 +23,9 @@ patterns:
       - name: punctuation
         match: ",|;"
   - name: keyword
-    match: "\\b(costumes|sounds|global|var|list|nowarp|onflag|onkey|onbackdrop|onloudness|ontimer|on|onclone)\\b"
+    match: "\\b(costumes|sounds|global|var|let|list|nowarp|onflag|onkey|onclick|onbackdrop|onloudness|ontimer|on|onclone)\\b"
   - name: keyword.control
-    match: "\\b(if|else|elif|until|forever|repeat|delete|at|add|to|insert|true|false|as|struct|enum|return)\\b"
+    match: "\\b(if|else|elif|while|until|forever|repeat|delete|at|add|to|insert|true|false|as|struct|enum|return)\\b"
   - name: keyword
     match: "\\b(error|warn|breakpoint|local|not|and|or|in|length|round|abs|floor|ceil|sqrt|sin|cos|tan|asin|acos|atan|ln|log|antiln|antilog)\\b"
   - name: support.function.builtin
@@ -35,7 +35,7 @@ patterns:
   - name: punctuation
     match: ",|;"
   - name: keyword.operator
-    match: "[+\\-*/%<>=&!]"
+    match: "\\bdiv\\b|[+\\-*/%<>=&!~^]"
   - name: variable.parameter
     match: "\\$[_a-zA-Z0-9]+"
   - name: variable.parameter

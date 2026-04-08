@@ -27,6 +27,28 @@ contains:
     - has
   body:
     - "${2:item} in ${1:list}"
+let:
+  description: Declare a let variable
+  prefix:
+    - let
+  body:
+    - "let ${1:name} = ${2:value};"
+var:
+  description: Declare a var variable
+  prefix:
+    - var
+  body:
+    - "var ${1:name} = ${2:value};"
+function:
+  description: Define a new function
+  prefix:
+    - function
+    - func
+    - proc
+  body:
+    - "function ${1:name}(${2}) {"
+    - "\t$0"
+    - "}"
 add:
   description: Add item to list
   prefix:
@@ -179,3 +201,10 @@ mod:
     - mod
   body:
     - " ${1:left} % ${2:right}"
+div:
+  description: Integer division
+  prefix:
+    - div
+    - //
+  body:
+    - " ${1:left} div ${2:right}"
