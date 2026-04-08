@@ -1,5 +1,7 @@
 # Goboscript Extension for Visual Studio Code
 
+[![Badge](https://cdn.jsdelivr.net/gh/JMcrafter26/badges@main/src/assets/available/visual-studio-marketplace/cozy.svg)](https://marketplace.visualstudio.com/items?itemName=Cufiy.goboscript-js)
+
 This directory contains the source code for the Goboscript extension for Visual Studio Code. The extension provides syntax highlighting, code completion, and other features for Goboscript development.
 
 > **Note:** This is the GoboScript JS extension, which is a fork of the main Goboscript extension. It is designed to work with the JavaScript version of the Goboscript compiler. For the C like version of the extension, see the main repository.
