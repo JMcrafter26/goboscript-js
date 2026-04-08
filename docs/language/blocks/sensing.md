@@ -3,7 +3,7 @@
 ### ask () and wait
 
 ```goboscript
-ask question;
+ask(question);
 ```
 
 ```scratchblocks

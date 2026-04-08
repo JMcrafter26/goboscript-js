@@ -3,7 +3,7 @@
 ### say () for () seconds
 
 ```goboscript
-say message, secs;
+say(message, secs);
 ```
 
 ```scratchblocks
@@ -13,7 +13,7 @@ say (message) for (secs) seconds
 ### think () for () seconds
 
 ```goboscript
-think message, secs;
+think(message, secs);
 ```
 
 ```scratchblocks
@@ -23,7 +23,7 @@ think (message) for (secs) seconds
 ### say ()
 
 ```goboscript
-say message;
+say(message);
 ```
 
 ```scratchblocks
@@ -33,7 +33,7 @@ say (message)
 ### think ()
 
 ```goboscript
-think message;
+think(message);
 ```
 
 ```scratchblocks
@@ -43,7 +43,7 @@ think (message)
 ### switch costume to ()
 
 ```goboscript
-switch_costume "costume";
+switch_costume("costume");
 ```
 
 ```scratchblocks
@@ -53,7 +53,7 @@ switch costume to (costume v)
 ### next costume
 
 ```goboscript
-next_costume;
+next_costume();
 ```
 
 ```scratchblocks
@@ -63,7 +63,7 @@ next costume
 ### switch backdrop to (next backdrop)
 
 ```goboscript
-switch_backdrop "backdrop";
+switch_backdrop("backdrop");
 ```
 
 ```scratchblocks
@@ -93,7 +93,7 @@ switch backdrop to (random backdrop v)
 ### next backdrop
 
 ```goboscript
-next_backdrop;
+next_backdrop();
 ```
 
 ```scratchblocks
@@ -103,7 +103,7 @@ next backdrop
 ### set size to () %
 
 ```goboscript
-set_size size;
+set_size(size);
 ```
 
 ```scratchblocks
@@ -113,7 +113,7 @@ set size to (size) %
 ### change size by ()
 
 ```goboscript
-change_size change;
+change_size(change);
 ```
 
 ```scratchblocks
@@ -273,7 +273,7 @@ clear graphic effects
 ### show
 
 ```goboscript
-show;
+show();
 ```
 
 ```scratchblocks
@@ -283,7 +283,7 @@ show
 ### hide
 
 ```goboscript
-hide;
+hide();
 ```
 
 ```scratchblocks
@@ -313,7 +313,7 @@ go to [back v] layer
 ### go [forward] () layers
 
 ```goboscript
-go_forward num;
+go_forward(num);
 ```
 
 ```scratchblocks
@@ -323,7 +323,7 @@ go [forward v] (num) layers
 ### go [backward] () layers
 
 ```goboscript
-go_backward num;
+go_backward(num);
 ```
 
 ```scratchblocks

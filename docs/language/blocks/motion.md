@@ -3,7 +3,7 @@
 ### move () steps
 
 ```goboscript
-move steps;
+move(steps);
 ```
 
 ```scratchblocks
@@ -13,7 +13,7 @@ move (steps) steps
 ### turn left () degrees
 
 ```goboscript
-turn_left degrees;
+turn_left(degrees);
 ```
 
 ```scratchblocks
@@ -23,7 +23,7 @@ turn left (degrees) degrees
 ### turn right () degrees
 
 ```goboscript
-turn_right degrees;
+turn_right(degrees);
 ```
 
 ```scratchblocks
@@ -33,7 +33,7 @@ turn right (degrees) degrees
 ### go to ()
 
 ```goboscript
-goto "sprite";
+goto("sprite");
 ```
 
 ```scratchblocks
@@ -53,7 +53,7 @@ go to (random position v)
 ### go to (mouse-pointer)
 
 ```goboscript
-goto_mouse_pointer;
+goto_mouse_pointer();
 ```
 
 ```scratchblocks
@@ -63,7 +63,7 @@ go to (mouse-pointer v)
 ### go to x: () y: ()
 
 ```goboscript
-goto x, y;
+goto(x, y);
 ```
 
 ```scratchblocks
@@ -113,7 +113,7 @@ glide (secs) secs to (mouse-pointer v)
 ### point in direction ()
 
 ```goboscript
-point_in_direction direction;
+point_in_direction(direction);
 ```
 
 ```scratchblocks
@@ -153,7 +153,7 @@ point towards (sprite v)
 ### change x by ()
 
 ```goboscript
-change_x dx;
+change_x(dx);
 ```
 
 ```scratchblocks
@@ -163,7 +163,7 @@ change x by (dx)
 ### set x to ()
 
 ```goboscript
-set_x x;
+set_x(x);
 ```
 
 ```scratchblocks
@@ -173,7 +173,7 @@ set x to (x)
 ### change y by ()
 
 ```goboscript
-change_y dy;
+change_y(dy);
 ```
 
 ```scratchblocks
@@ -183,7 +183,7 @@ change y by (dy)
 ### set y to ()
 
 ```goboscript
-set_y y;
+set_y(y);
 ```
 
 ```scratchblocks

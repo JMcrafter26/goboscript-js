@@ -48,11 +48,11 @@ For example, if you have a costume named "A" at position 1, and a costume named 
 position 2, you can use the following code to detect the case of a character:
 
 ```goboscript
-switch_costume char;
+switch_costume(char);
 if costume_number() == 1 {
-    say "upper case A";
+    say("upper case A");
 } else {
-    say "lower case a";
+    say("lower case a");
 }
 ```
 
@@ -61,7 +61,7 @@ ASCII value of a character by adding `31` to the costume number.
 
 ```goboscript
 function ord(c) {
-    switch_costume $c;
+    switch_costume($c);
     return 31+costume_number();
 }
 ```
@@ -70,7 +70,7 @@ You can convert a byte to a character by subtracting 31, then switching costumes
 
 ```goboscript
 function chr(c) {
-    switch_costume $c-31;
+    switch_costume($c-31);
     return costume_name();
 }
 ```

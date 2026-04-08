@@ -2,7 +2,7 @@ costumes "blank.svg";
 
 onflag() {
     foo = 1;
-    wait 1;
+    wait(1);
     repeat foo {
         while (!(1 < 2)) {}
     }

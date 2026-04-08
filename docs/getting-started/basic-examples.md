@@ -65,28 +65,28 @@ x = 10;
 
 // Simple if statement
 if x > 5 {
-    say "x is greater than 5";
+    say("x is greater than 5");
 }
 
 // If-else statement
 if x % 2 == 0 {
-    say "x is even";
+    say("x is even");
 } else {
-    say "x is odd";
+    say("x is odd");
 }
 
 // If-else if-else statement
 if x < 0 {
-    say "x is negative";
+    say("x is negative");
 } else if x == 0 {
-    say "x is zero";
+    say("x is zero");
 } else {
-    say "x is positive";
+    say("x is positive");
 }
 
 // Boolean coercion
 if timer() {  // Equivalent to: if timer() == 1
-    say "Timer is active";
+    say("Timer is active");
 }
 ```
 
@@ -95,26 +95,26 @@ if timer() {  // Equivalent to: if timer() == 1
 ```goboscript
 // Repeat loop (fixed number of iterations)
 repeat 5 {
-    say "Repeated message";
+    say("Repeated message");
 }
 
 // Repeat with counter
 i = 1;
 repeat 10 {
-    say "Iteration " & i;
+    say("Iteration " & i);
     i++;
 }
 
 // While loop (continues while condition is true)
 counter = 0;
 while (counter <= 5) {
-    say "Counter: " & counter;
+    say("Counter: " & counter);
     counter++;
 }
 
 // Forever loop (infinite loop)
 forever {
-    say "Press stop to exit";
+    say("Press stop(to exit"));
     if key space pressed? {
         stop_this_script;
     }
@@ -128,18 +128,18 @@ forever {
 ```goboscript
 // Define a procedure
 function greet_user() {
-    say "Hello, user!";
+    say("Hello, user!");
 }
 
 // Procedure with parameters
 function personalized_greeting(name) {
-    say "Hello, " & $name & "!";
+    say("Hello, " & $name & "!");
 }
 
 // Procedure with let variables
 function calculate_sum(a, b) {
     let result = $a + $b;
-    say "Sum: " & result;
+    say("Sum: " & result);
 }
 
 onflag() {
@@ -167,7 +167,7 @@ function create_greeting(name) {
 
 onflag() {
     message = create_greeting("World");
-    say message;  // Outputs: "Hello, World!"
+    say(message);  // Outputs: "Hello, World!"
 }
 ```
 
@@ -180,9 +180,9 @@ onflag() {
 list my_list;
 
 // Add items to a list
-add "apple" to my_list;
-add "banana" to my_list;
-add "cherry" to my_list;
+add("apple", my_list);
+add("banana", my_list);
+add("cherry", my_list);
 
 // Access list items (1-indexed)
 first_item = my_list[1];  // "apple"
@@ -191,24 +191,24 @@ first_item = my_list[1];  // "apple"
 my_list[2] = "blueberry";     // Replace "banana" with "blueberry"
 
 // Insert at position
-insert "apricot" at my_list[1]; // Insert at the beginning
+insert("apricot", my_list, 1); // Insert at the beginning
 
 // Delete an item
-delete my_list[3];
+delete(my_list[3]);
 
 // Check length
 size = length my_list;
 
 // Check if an item is in the list
 if "cherry" in my_list {
-    say "Found cherry!";
+    say("Found cherry!");
 }
 
 // Get random item
 random_fruit = my_list["random"];
 
 // Clear the list
-delete my_list;
+delete(my_list);
 
 // Load list from file
 list data = file ```data.txt```;

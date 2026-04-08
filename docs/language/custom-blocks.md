@@ -10,8 +10,8 @@ commas.
 
 ```goboscript
 function my_procedure(arg1, arg2) {
-    say $arg1;
-    say $arg2;
+    say($arg1);
+    say($arg2);
 }
 ```
 
@@ -20,8 +20,8 @@ Use the `nowarp` keyword before `function` to make the custom block
 
 ```goboscript
 nowarp function my_procedure(arg1, arg2) {
-    say $arg1;
-    say $arg2;
+    say($arg1);
+    say($arg2);
 }
 ```
 
@@ -31,7 +31,7 @@ You can take in struct values by specifying the type name before the argument na
 
 ```goboscript
 function process_item(item_data: Item) {
-    say $item_data.name;
+    say($item_data.name);
 }
 ```
 
@@ -44,7 +44,7 @@ caller to skip certain arguments when calling the block.
 
 ```goboscript
 function greet(name = "world") {
-    say "Hello, " & $name & "!";
+    say("Hello, " & $name & "!");
 }
 ```
 
@@ -61,7 +61,7 @@ calling with many arguments.
 
 ```goboscript
 function introduce(name, title = "developer", location = "unknown") {
-    say $name & " is a " & $title & " from " & $location;
+    say($name & " is a " & $title & " from " & $location);
 }
 ```
 

@@ -37,25 +37,25 @@ If type is specified, each list item is made-up by N lines where N is the no. of
 ### Add item to list
 
 ```goboscript
-add value to list_name;
+add(value, list_name);
 ```
 
 ### Delete item from list at index
 
 ```goboscript
-delete list_name[index];
+delete(list_name[index]);
 ```
 
 ### Delete all items from list
 
 ```goboscript
-delete list_name;
+delete(list_name);
 ```
 
 ### Insert item at index in list
 
 ```goboscript
-insert value at list_name[index];
+insert(value, list_name, index);
 ```
 
 ### Replace item at index in list

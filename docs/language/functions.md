@@ -59,8 +59,8 @@ let vec2: Vector = Vector { x: 5, y: 15 };
 let result: Vector = vec_add(vec1, vec2);
 
 // Access the returned struct's fields
-say result.x; // Outputs: 15
-say result.y; // Outputs: 35
+say(result.x); // Outputs: 15
+say(result.y); // Outputs: 35
 ```
 
 !!!NOTE

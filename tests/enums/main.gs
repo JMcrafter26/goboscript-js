@@ -8,8 +8,8 @@ enum Direction {
 }
 
 onflag() {
-    say Direction.North;
-    say Direction.East;
-    say Direction.South;
-    say Direction.West;
+    say(Direction.North);
+    say(Direction.East);
+    say(Direction.South);
+    say(Direction.West);
 }

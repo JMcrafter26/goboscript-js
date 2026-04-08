@@ -1,7 +1,7 @@
 costumes "blank.svg";
 
 onflag() {
-    ask "What is your name?";
+    ask("What is your name?");
     foo = answer();
     say touching_mouse_pointer();
     say touching_edge();

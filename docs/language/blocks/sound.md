@@ -13,7 +13,7 @@ play sound (sound v) until done
 ### start sound ()
 
 ```goboscript
-start_sound "sound";
+start_sound("sound");
 ```
 
 ```scratchblocks
@@ -23,7 +23,7 @@ start sound (sound v)
 ### stop all sounds
 
 ```goboscript
-stop_all_sounds;
+stop_all_sounds();
 ```
 
 ```scratchblocks
@@ -73,7 +73,7 @@ set [pan v] effect to (value)
 ### change volume by ()
 
 ```goboscript
-change_volume volume;
+change_volume(volume);
 ```
 
 ```scratchblocks
@@ -83,7 +83,7 @@ change volume by (volume)
 ### set volume to () %
 
 ```goboscript
-set_volume volume;
+set_volume(volume);
 ```
 
 ```scratchblocks

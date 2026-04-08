@@ -39,5 +39,5 @@ enum Direction {
 ## Get enum value
 
 ```goboscript
-say Direction.North;
+say(Direction.North);
 ```

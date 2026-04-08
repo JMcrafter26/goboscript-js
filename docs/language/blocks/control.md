@@ -3,7 +3,7 @@
 ### wait () seconds
 
 ```goboscript
-wait duration;
+wait(duration);
 ```
 
 ```scratchblocks
@@ -43,7 +43,7 @@ stop [other scripts in sprite v]
 ### delete this clone
 
 ```goboscript
-delete_this_clone;
+delete_this_clone();
 ```
 
 ```scratchblocks

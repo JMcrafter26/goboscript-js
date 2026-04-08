@@ -1,18 +1,18 @@
 costumes "blank.svg";
 
 onflag() {
-    say "with duration", 2;
-    say "without duration";
-    think "with duration", 2;
-    think "without duration";
+    say("with duration", 2);
+    say("without duration");
+    think("with duration", 2);
+    think("without duration");
     switch_costume "blank";
     switch_costume costume_number();
     next_costume;
     switch_backdrop "blank";
     switch_backdrop backdrop_number();
     next_backdrop;
-    change_size 10;
-    set_size 100;
+    change_size(10);
+    set_size(100);
     change_color_effect 25;
     change_fisheye_effect 25;
     change_whirl_effect 25;
@@ -28,8 +28,8 @@ onflag() {
     set_brightness_effect 0;
     set_ghost_effect costume_name();
     clear_graphic_effects;
-    show;
-    hide;
+    show();
+    hide();
     goto_front;
     goto_back;
     go_forward backdrop_name();

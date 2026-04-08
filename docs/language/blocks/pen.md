@@ -3,7 +3,7 @@
 ### erase all
 
 ```goboscript
-erase_all;
+erase_all();
 ```
 
 ```scratchblocks
@@ -23,7 +23,7 @@ stamp
 ### pen down
 
 ```goboscript
-pen_down;
+pen_down();
 ```
 
 ```scratchblocks
@@ -33,7 +33,7 @@ pen down
 ### pen up
 
 ```goboscript
-pen_up;
+pen_up();
 ```
 
 ```scratchblocks
@@ -43,7 +43,7 @@ pen up
 ### set pen color to ()
 
 ```goboscript
-set_pen_color color;
+set_pen_color(color);
 ```
 
 ```scratchblocks
@@ -53,7 +53,7 @@ set pen color to (color)
 ### change pen size by ()
 
 ```goboscript
-change_pen_size size_;
+change_pen_size(size_);
 ```
 
 ```scratchblocks
@@ -63,7 +63,7 @@ change pen size by (size_)
 ### set pen size to ()
 
 ```goboscript
-set_pen_size size_;
+set_pen_size(size_);
 ```
 
 ```scratchblocks

@@ -15,31 +15,31 @@ properties at runtime.
 ### Sprite default X position
 
 ```goboscript
-set_x 100;
+set_x(100);
 ```
 
 ### Sprite default Y position
 
 ```goboscript
-set_y 100;
+set_y(100);
 ```
 
 ### Sprite default size
 
 ```goboscript
-set_size 100;
+set_size(100);
 ```
 
 ### Sprite default direction
 
 ```goboscript
-point_in_direction 100;
+point_in_direction(100);
 ```
 
 ### Sprite default volume
 
 ```goboscript
-set_volume 100;
+set_volume(100);
 ```
 
 ### Set sprite default visibility to hidden
@@ -47,7 +47,7 @@ set_volume 100;
 Hide sprite by default.
 
 ```goboscript
-hide;
+hide();
 ```
 
 ### Set Sprite default rotation style to **left-right**
