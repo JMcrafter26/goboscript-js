@@ -44,3 +44,4 @@ pub use struct_literal_field::*;
 pub use type_::*;
 pub use value::*;
 pub use var::*;
+pub use stmt::has_return;

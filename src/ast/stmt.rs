@@ -230,3 +230,20 @@ pub fn split_args(
 
     (positional, named)
 }
+
+pub fn has_return(stmts: &[Stmt]) -> bool {
+    for stmt in stmts {
+        match stmt {
+            Stmt::Return { .. } => return true,
+            Stmt::Repeat { body, .. } => if has_return(body) { return true; },
+            Stmt::Forever { body, .. } => if has_return(body) { return true; },
+            Stmt::Branch { if_body, else_body, .. } => {
+                if has_return(if_body) || has_return(else_body) { return true; }
+            },
+            Stmt::Until { body, .. } => if has_return(body) { return true; },
+            _ => {}
+        }
+    }
+    false
+}
+

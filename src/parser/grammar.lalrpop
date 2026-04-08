@@ -41,7 +41,11 @@ Declr: () = {
         sprite.rotation_style = RotationStyle::DoNotRotate;
     },
     <w:NOWARP?> FUNCTION <l:@L> <n:NAME> <r:@R> "(" <a:Comma<Arg>> ")" <b:Stmts> => {
-        sprite.add_proc(Proc::new(n.clone(), l..r, w.is_none()), a, b, diagnostics);
+        if crate::ast::has_return(&b) {
+            sprite.add_func(Func::new(n.clone(), l..r, Type::Value), a, b, diagnostics);
+        } else {
+            sprite.add_proc(Proc::new(n.clone(), l..r, w.is_none()), a, b, diagnostics);
+        }
     },
     FUNCTION <l:@L> <n:NAME> <r:@R> "(" <a:Comma<Arg>> ")" ":" <t:TypeName> <b:Stmts> => {
         sprite.add_func(Func::new(n.clone(), l..r, t), a, b, diagnostics);
