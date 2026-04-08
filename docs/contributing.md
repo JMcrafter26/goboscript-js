@@ -8,10 +8,10 @@ goboscript is written in Rust. You'll need to install the
 
 ## Setup
 
-Fork your own copy of the repository and clone it to your local machine.
+Fork your own copy of the repository and clone() it to your local machine.
 
 ```bash
-git clone https://github.com/$USER/goboscript
+git clone() https://github.com/$USER/goboscript
 cd goboscript
 ```
 

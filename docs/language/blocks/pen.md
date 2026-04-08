@@ -10,14 +10,14 @@ erase_all();
 erase all
 ```
 
-### stamp
+### stamp()
 
 ```goboscript
-stamp;
+stamp();
 ```
 
 ```scratchblocks
-stamp
+stamp()
 ```
 
 ### pen down
@@ -73,7 +73,7 @@ set pen size to (size_)
 ### set pen [color] to ()
 
 ```goboscript
-set_pen_hue value;
+set_pen_hue(value);
 ```
 
 ```scratchblocks
@@ -83,7 +83,7 @@ set pen [color v] to (value)
 ### set pen [saturation] to ()
 
 ```goboscript
-set_pen_saturation value;
+set_pen_saturation(value);
 ```
 
 ```scratchblocks
@@ -93,7 +93,7 @@ set pen [saturation v] to (value)
 ### set pen [brightness] to ()
 
 ```goboscript
-set_pen_brightness value;
+set_pen_brightness(value);
 ```
 
 ```scratchblocks
@@ -103,7 +103,7 @@ set pen [brightness v] to (value)
 ### set pen [transparency] to ()
 
 ```goboscript
-set_pen_transparency value;
+set_pen_transparency(value);
 ```
 
 ```scratchblocks
@@ -113,7 +113,7 @@ set pen [transparency v] to (value)
 ### change pen [color] by ()
 
 ```goboscript
-change_pen_hue value;
+change_pen_hue(value);
 ```
 
 ```scratchblocks
@@ -123,7 +123,7 @@ change pen [color v] by (value)
 ### change pen [saturation] by ()
 
 ```goboscript
-change_pen_saturation value;
+change_pen_saturation(value);
 ```
 
 ```scratchblocks
@@ -133,7 +133,7 @@ change pen [saturation v] by (value)
 ### change pen [brightness] by ()
 
 ```goboscript
-change_pen_brightness value;
+change_pen_brightness(value);
 ```
 
 ```scratchblocks
@@ -143,7 +143,7 @@ change pen [brightness v] by (value)
 ### change pen [transparency] by ()
 
 ```goboscript
-change_pen_transparency value;
+change_pen_transparency(value);
 ```
 
 ```scratchblocks

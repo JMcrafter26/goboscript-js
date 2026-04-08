@@ -93,11 +93,11 @@ if (value in list_name) {
 ### Show/Hide List Monitor
 
 ```goboscript
-show list_name;
+show()list_name;
 ```
 
 ```goboscript
-hide list_name;
+hide()list_name;
 ```
 
 ### Get random/last item in list

@@ -3,7 +3,7 @@
 ### play sound () until done
 
 ```goboscript
-play_sound_until_done "sound";
+play_sound_until_done("sound");
 ```
 
 ```scratchblocks
@@ -33,7 +33,7 @@ stop all sounds
 ### change [pitch] effect by ()
 
 ```goboscript
-change_pitch_effect value;
+change_pitch_effect(value);
 ```
 
 ```scratchblocks
@@ -43,7 +43,7 @@ change [pitch v] effect by (value)
 ### change [pan] effect by ()
 
 ```goboscript
-change_pan_effect value;
+change_pan_effect(value);
 ```
 
 ```scratchblocks
@@ -53,7 +53,7 @@ change [pan v] effect by (value)
 ### set [pitch] effect to ()
 
 ```goboscript
-set_pitch_effect value;
+set_pitch_effect(value);
 ```
 
 ```scratchblocks
@@ -63,7 +63,7 @@ set [pitch v] effect to (value)
 ### set [pan] effect to ()
 
 ```goboscript
-set_pan_effect value;
+set_pan_effect(value);
 ```
 
 ```scratchblocks
@@ -93,7 +93,7 @@ set volume to (volume) %
 ### clear sound effects
 
 ```goboscript
-clear_sound_effects;
+clear_sound_effects();
 ```
 
 ```scratchblocks

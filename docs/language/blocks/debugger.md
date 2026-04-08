@@ -3,7 +3,7 @@
 ### log ()
 
 ```goboscript
-log message;
+log(message);
 ```
 
 ```scratchblocks
@@ -13,7 +13,7 @@ log (message) :: #009970
 ### warn ()
 
 ```goboscript
-warn message;
+warn(message);
 ```
 
 ```scratchblocks
@@ -23,19 +23,19 @@ warn (message) :: #009970
 ### error ()
 
 ```goboscript
-error message;
+error(message);
 ```
 
 ```scratchblocks
 error (message) :: #009970
 ```
 
-### breakpoint
+### breakpoint()
 
 ```goboscript
-breakpoint;
+breakpoint();
 ```
 
 ```scratchblocks
-breakpoint :: #009970
+breakpoint() :: #009970
 ```

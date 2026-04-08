@@ -3,7 +3,7 @@
 `random` only outputs decimals if its arguments are formatted as decimals, but goboscript optimizes `1.0` to `1`, turning them into integers. Pass the arguments as strings to prevent this:
 
 ```goboscript
-say random("0.0", "1.0");
+say(random("0.0", "1.0"));
 ```
 
 ### Converting Strings to Numbers
@@ -45,7 +45,7 @@ function get_my_variable() {
 %include lib/my_module
 
 onflag() {
-    say get_my_variable();
+    say(get_my_variable());
     // private_variable = 10; # error — alias no longer defined
 }
 ```

@@ -53,17 +53,17 @@ hide();
 ### Set Sprite default rotation style to **left-right**
 
 ```goboscript
-set_rotation_style_left_right;
+set_rotation_style_left_right();
 ```
 
 ### Set Sprite default rotation style to **all around**
 
 ```goboscript
-set_rotation_style_all_around;
+set_rotation_style_all_around();
 ```
 
 ### Set Sprite default rotation style to **don't rotate**
 
 ```goboscript
-set_rotation_style_do_not_rotate;
+set_rotation_style_do_not_rotate();
 ```

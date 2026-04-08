@@ -65,7 +65,7 @@ If you want to garble the generated variable and function names (to protect your
 goboscript build --obfuscate
 ```
 
-You can optionally pass `--debug` alongside `--obfuscate` to preserve the names of the `log`, `warn`, `error` and `breakpoint` functions, making it easier to debug a garbled build. Also, if there are specific variables or functions you do not want garbled, simply prefix their names with `!_` (this prefix will be stripped in the final output, leaving your original name intact).
+You can optionally pass `--debug` alongside `--obfuscate` to preserve the names of the `log`, `warn`, `error` and `breakpoint()` functions, making it easier to debug a garbled build. Also, if there are specific variables or functions you do not want garbled, simply prefix their names with `!_` (this prefix will be stripped in the final output, leaving your original name intact).
 
 If the compilation fails, and you have got errors, the generated `.sb3` file will be
 invalid and should not be opened in Scratch.

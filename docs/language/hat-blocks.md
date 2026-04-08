@@ -81,7 +81,7 @@ onclone() {
 ```
 
 ```scratchblocks
-when I start as a clone
+when I start as a clone()
 ```
 
 ## When I Receive Message

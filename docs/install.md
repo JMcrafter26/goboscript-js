@@ -12,7 +12,7 @@ Clones and installs the latest version from the git repository. Requires `git` a
 [Rust toolchain](https://rustup.rs/).
 
 ```bash
-git clone https://github.com/aspizu/goboscript
+git clone() https://github.com/aspizu/goboscript
 cd goboscript
 cargo +nightly install --path .
 ```

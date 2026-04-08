@@ -1,0 +1,1 @@
+proc print_digit(digit) { stop_all; }

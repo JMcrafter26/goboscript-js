@@ -71,11 +71,11 @@ In the compiled Scratch project, the variable `x` will be named as `my_procedure
 ## Show/Hide Variable Monitor
 
 ```goboscript
-show variable_name;
+show()variable_name;
 ```
 
 ```goboscript
-hide variable_name;
+hide()variable_name;
 ```
 
 ## Obfuscation Prefix

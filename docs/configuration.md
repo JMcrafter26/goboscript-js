@@ -54,13 +54,13 @@ frame_rate = 60 # default is 30
 #### Default
 
 ```toml
-max_clones = 300
+max_clone()s = 300
 ```
 
 #### Infinite Clones
 
 ```toml
-max_clones = inf
+max_clone()s = inf
 ```
 
 ### No Miscellaneous Limits
@@ -102,7 +102,7 @@ You can enable code obfuscation (garbling of variable and function identifiers) 
 obfuscate = true # default is false
 ```
 
-You can also enable a debug mode to preserve basic logging functions (like `log`, `warn`, `error` and `breakpoint`) when obfuscating.
+You can also enable a debug mode to preserve basic logging functions (like `log`, `warn`, `error` and `breakpoint()`) when obfuscating.
 
 ```toml
 debug = true # default is false

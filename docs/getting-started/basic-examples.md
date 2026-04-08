@@ -116,7 +116,7 @@ while ((counter <= 5)) {
 forever {
     say("Press stop(to exit"));
     if (key space pressed?) {
-        stop_this_script;
+        stop_this_script();
     }
 }
 ```
@@ -227,7 +227,7 @@ struct Point {
 let p: Point = Point { x: 10, y: 20 };
 
 // Access struct fields
-say "Coordinates: " & p.x & ", " & p.y;
+say("Coordinates: " & p.x & ", " & p.y);
 
 // Define an enum
 enum Direction {
@@ -240,7 +240,7 @@ enum Direction {
 // Use enum values
 current_direction = Direction.North;
 if (current_direction == Direction.North) {
-    say "Heading north";
+    say("Heading north");
 }
 
 // Enum with explicit values
@@ -250,5 +250,5 @@ enum Color {
     Blue = "blue"
 }
 
-say "Selected color: " & Color.Red;
+say("Selected color: " & Color.Red);
 ```

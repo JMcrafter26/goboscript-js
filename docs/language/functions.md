@@ -5,9 +5,8 @@ primitives or structs. Functions always run in **Run without screen refresh** mo
 **must only be called** from other **Run without screen refresh** procedures or 
 functions to prevent undefined behavior.
 
-Each function must **end with a `return` statement**. Using `stop_this_script` inside 
+Each function must **end with a `return` statement**. Using `stop_this_script()` inside 
 a function is undefined behavior.
-
 
 ## Declaring a Function
 
@@ -88,7 +87,7 @@ function greet(name = "world") {
 Functions are called by name with argument values:
 
 ```goboscript
-say my_function(1, 2);
+say(my_function(1, 2));
 ```
 
 ---

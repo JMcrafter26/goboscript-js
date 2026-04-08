@@ -77,8 +77,8 @@ arguments passed at the callsite.
 %define MACRO(A, B) "MACRO(A, B)"
 
 onflag() {
-    say MACRO(1);      // expands to "MACRO(A)"
-    say MACRO(1, 1);   // expands to "MACRO(A, B)"
+    say(MACRO(1));      // expands to "MACRO(A)"
+    say(MACRO(1, 1));   // expands to "MACRO(A, B)"
 }
 ```
 

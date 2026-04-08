@@ -83,12 +83,12 @@ function my_procedure(arg: my_struct) {
 }
 
 onflag() {
-    my_procedure my_struct {
+    my_procedure(my_struct {
         x: 10,
         y: 20,
         z: 30
-    };
-    my_procedure my_list[1];
+    });
+    my_procedure(my_list[1]);
 }
 ```
 

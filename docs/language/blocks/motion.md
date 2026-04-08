@@ -43,7 +43,7 @@ go to (sprite v)
 ### go to (random position)
 
 ```goboscript
-goto_random_position;
+goto_random_position();
 ```
 
 ```scratchblocks
@@ -73,7 +73,7 @@ go to x: (x) y: (y)
 ### glide () secs to x: () y: ()
 
 ```goboscript
-glide x, y, secs;
+glide(x, y, secs);
 ```
 
 ```scratchblocks
@@ -83,7 +83,7 @@ glide (secs) secs to x: (x) y: (y)
 ### glide () secs to ()
 
 ```goboscript
-glide_to "sprite", secs;
+glide_to("sprite", secs);
 ```
 
 ```scratchblocks
@@ -93,7 +93,7 @@ glide (secs) secs to (sprite v)
 ### glide () secs to (random position)
 
 ```goboscript
-glide_to_random_position secs;
+glide_to_random_position(secs);
 ```
 
 ```scratchblocks
@@ -103,7 +103,7 @@ glide (secs) secs to (random position v)
 ### glide () secs to (mouse-pointer)
 
 ```goboscript
-glide_to_mouse_pointer secs;
+glide_to_mouse_pointer(secs);
 ```
 
 ```scratchblocks
@@ -123,7 +123,7 @@ point in direction (direction)
 ### point towards (mouse-pointer)
 
 ```goboscript
-point_towards_mouse_pointer;
+point_towards_mouse_pointer();
 ```
 
 ```scratchblocks
@@ -133,7 +133,7 @@ point towards (mouse-pointer v)
 ### point towards (random direction)
 
 ```goboscript
-point_towards_random_direction;
+point_towards_random_direction();
 ```
 
 ```scratchblocks
@@ -143,7 +143,7 @@ point towards (random direction v)
 ### point towards ()
 
 ```goboscript
-point_towards "sprite";
+point_towards("sprite");
 ```
 
 ```scratchblocks
@@ -193,7 +193,7 @@ set y to (y)
 ### if on edge, bounce
 
 ```goboscript
-if_on_edge_bounce;
+if_on_edge_bounce();
 ```
 
 ```scratchblocks
@@ -203,7 +203,7 @@ if on edge, bounce
 ### set rotation style [left-right]
 
 ```goboscript
-set_rotation_style_left_right;
+set_rotation_style_left_right();
 ```
 
 ```scratchblocks
@@ -213,7 +213,7 @@ set rotation style [left-right v]
 ### set rotation style [don't rotate]
 
 ```goboscript
-set_rotation_style_do_not_rotate;
+set_rotation_style_do_not_rotate();
 ```
 
 ```scratchblocks
@@ -223,7 +223,7 @@ set rotation style [don't rotate v]
 ### set rotation style [all around]
 
 ```goboscript
-set_rotation_style_all_around;
+set_rotation_style_all_around();
 ```
 
 ```scratchblocks

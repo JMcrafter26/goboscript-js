@@ -13,7 +13,7 @@ repeat (n) {
 ## while loop (repeat until)
 
 ```goboscript
-while ((condition)) {
+while (condition) {
     // code
 }
 ```
@@ -59,7 +59,7 @@ else {
 if (condition) {
     // code
 }
-else if ((condition)) {
+else if (condition) {
     // code
 }
 ```
